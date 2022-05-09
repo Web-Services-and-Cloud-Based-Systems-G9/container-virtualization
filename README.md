@@ -2,12 +2,12 @@
 
 As part of the third assignment of the Web Services & Cloud Based Systems course we developed a RESTful service to shorten URLs alongside an authentication service which works using a JWT schema. Both services are dockerized using docker and docker-compose.
 The application architecture goes as follows: ![architecture](https://i.imgur.com/93I8KKb.png)
-More implementation details, answer to questions and the group members contribution can be found in the ```report.pdf``` document in this repository.
+Each subdirectory (login-service and shortener-service) is a service. They are orchestrated by a `docker-compose.yml` file that uses the `Dockerfile`s inside each directory to run each container as a separated service. More implementation details, answer to questions and the group members contribution can be found in the ```report.pdf``` document in this repository.
 
 
 ## How to Run
 
-0. Make sure you have installed docker and docker-compose in your computer.
+0. Make sure you have installed docker and docker-compose in your computer. 
 
 1. Clone this repository or download the source code
 ```commandline
