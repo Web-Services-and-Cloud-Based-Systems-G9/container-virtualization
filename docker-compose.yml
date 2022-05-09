@@ -1,32 +1,32 @@
-version: '3.5'
+version: '3.5'  # version of docker-compose
 services:
-    login:
-        build: ./login-service
-        ports:
+    login:  # first service
+        build: ./login-service  # where is the dockerfile of this service?
+        ports:  # Which ports mappings are we going to publish for external users to access the services?
             - "8081:8081"
-        volumes:
+        volumes:    # Which volumes the container must share with the local computer
             - .:/app
             - ./login-service/venv:/app/venv
-        env_file:
+        env_file:   # Configure a file with environment variables for the container
             - ./login-service/.env
-        networks:
+        networks:   # choose the networks the containers will be
             - shorty-network
-        container_name: "login-service"
+        container_name: "login-service" # A readable name given to the container
 
-    shortener:
-        build: ./shortener-service
-        ports:
+    shortener: # second service
+        build: ./shortener-service  # where is the dockerfile of this service?
+        ports:  # Which ports mappings are we going to publish for external users to access the services?
             - "8080:8080"
-        volumes:
+        volumes:    # Which volumes the container must share with the local computer in the following format => [on-local]:[on-container]
             - .:/app
             - ./shortener-service/venv:/app/venv
-        env_file:
+        env_file:   # Configure a file with environment variables for the container
             - ./shortener-service/.env
-        networks:
+        networks:   # choose the networks the containers will be
             - shorty-network
-        container_name: "shortener-service"
-
+        container_name: "shortener-service" # A readable name given to the container
+# configure an intra-container network
 networks:
-  shorty-network:
-    external: false
-    name: shorty-network
+  shorty-network:   # identifier of the network
+    external: false # it must be created as external
+    name: shorty-network    # name of the network

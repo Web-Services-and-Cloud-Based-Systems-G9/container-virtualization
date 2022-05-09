@@ -1,8 +1,8 @@
 # Assignment 3.1: Containerized Shorty URL
 
 As part of the third assignment of the Web Services & Cloud Based Systems course we developed a RESTful service to shorten URLs alongside an authentication service which works using a JWT schema. Both services are dockerized using docker and docker-compose.
-
-Implementation details, answer to questions and the group members contribution can be found in the ```report.pdf``` document in this repository.
+The application architecture goes as follows: ![architecture](https://i.imgur.com/93I8KKb.png)
+More implementation details, answer to questions and the group members contribution can be found in the ```report.pdf``` document in this repository.
 
 
 ## How to Run
